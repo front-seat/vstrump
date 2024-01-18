@@ -7,10 +7,13 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-darkest text-medium">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="vs. Trump Fund - Backed by evidence and vouched for by experts - we’ve done the research to give you a one-stop-shop to defeat Trump."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -21,29 +24,69 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+  @font-face {
+    font-family: "Switzer";
+    src:
+      url("/fonts/Switzer-Bold.woff2") format("woff2"),
+      url("/fonts/Switzer-Bold.woff") format("woff"),
+      url("/fonts/Switzer-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
   }
-  html {
-    font-family: system-ui, sans-serif;
+
+  @font-face {
+    font-family: "Switzer";
+    src:
+      url("/fonts/Switzer-Medium.woff2") format("woff2"),
+      url("/fonts/Switzer-Medium.woff") format("woff"),
+      url("/fonts/Switzer-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+
+  @font-face {
+    font-family: "Switzer";
+    src:
+      url("/fonts/Switzer-Regular.woff2") format("woff2"),
+      url("/fonts/Switzer-Regular.woff") format("woff"),
+      url("/fonts/Switzer-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Switzer";
+    src:
+      url("/fonts/Switzer-Light.woff2") format("woff2"),
+      url("/fonts/Switzer-Light.woff") format("woff"),
+      url("/fonts/Switzer-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Plein";
+    src:
+      url("/fonts/Plein-Bold.woff2") format("woff2"),
+      url("/fonts/Plein-Bold.woff") format("woff"),
+      url("/fonts/Plein-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Plein";
+    src:
+      url("/fonts/Plein-Regular.woff2") format("woff2"),
+      url("/fonts/Plein-Regular.woff") format("woff"),
+      url("/fonts/Plein-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
   }
 </style>
