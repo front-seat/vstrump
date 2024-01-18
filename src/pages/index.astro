@@ -2,136 +2,63 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import Calculator from "../components/Calculator.tsx";
+import { H1, H3, Em28, P21 } from "../components/Typeography.tsx";
 ---
 
 <Layout title="The vs. Trump Fund.">
   <main>
-    <section>
-      <h1>vs. Trump Fund</h1>
-      <h3>Donate to a portfolio of high-impact campaigns to defeat Trump.</h3>
-      <h3>Backed by evidence and vouched for by experts.</h3>
-      <h3>
-        We’ve done the research to give you a one-stop-shop to defeat Trump.
-      </h3>
-      <Button title="Donate Now" />
+    <section class="py-16 max-w-[960px] mx-8 lg:mx-auto">
+      <H1>
+        <span class="text-sun">vs.<br />TRUMP</span><br />FUND
+      </H1>
+      <H3 className="border-t-2 border-medium mt-24 pt-8">
+        Backed by evidence and vouched for by experts - we’ve done the research
+        to give you <span class="text-sun">a one-stop-shop to defeat Trump</span
+        >.
+      </H3>
+      <div class="flex flex-col pt-16">
+        <div
+          class="flex flex-wrap lg:flex-nowrap lg:space-x-8 border-b border-dark py-6"
+        >
+          <p class="text-white w-[304px] flex-shrink-0">
+            <Em28>A portfolio of winning projects</Em28>
+          </p>
+          <P21 className="text-medium mt-8 lg:mt-0">
+            Each project is approved by professional donor advisors and based on
+            metrics such as cost-per-vote.
+          </P21>
+        </div>
+        <div
+          class="flex flex-wrap lg:flex-nowrap lg:space-x-8 border-b border-dark py-6"
+        >
+          <p class="text-white w-[304px] flex-shrink-0">
+            <Em28>2X your impact by giving early</Em28>
+          </p>
+          <P21 className="text-medium mt-8 lg:mt-0">
+            Giving in the first half of 2024 is 2X as impactful as giving close
+            to the election. <a class="text-sun underline" href="#"
+              >Read the blog post</a
+            >.
+          </P21>
+        </div>
+        <div
+          class="flex flex-wrap lg:flex-nowrap lg:space-x-8 border-b border-dark py-6"
+        >
+          <p class="text-white w-[304px] flex-shrink-0">
+            <Em28>We don’t touch your donations.</Em28>
+          </p>
+          <P21 className="text-medium mt-8 lg:mt-0">
+            You donate directly to the organizations through our trusted partner
+            <a class="text-sun underline" href="#">ActBlue</a>.
+          </P21>
+        </div>
+      </div>
     </section>
-
-    <section>
-      <h1>How it Works</h1>
-      <p class="text-center mb-16 -mt-8">
-        <em>Your donation is spread across these impactful programs.</em>
-      </p>
-      <table>
-        <tr>
-          <th>20%</th>
-          <td>Biden campaign</td>
-        </tr>
-        <tr>
-          <th>15%</th>
-          <td
-            >Other competitive federal races (the House and Senate are backups
-            in case Trump wins)</td
-          >
-        </tr>
-        <tr>
-          <th>30%</th>
-          <td
-            >The most quantitatively measurable and cost-effective tactics for
-            voter registration, persuasion, and turnout.</td
-          >
-        </tr>
-        <tr>
-          <th>25%</th>
-          <td
-            >Organizations that focus on specific communities and demographics</td
-          >
-        </tr>
-        <tr>
-          <th>10%</th>
-          <td>Infrastructure and innovative appropaches</td>
-        </tr>
-      </table>
-      <p class="mt-16">
-        This approach and the organizations we recommend have been vetted by the
-        following political experts:
-      </p>
-      <ul class="mt-4">
-        <li>David Slifka - Author of Innovation and Money in Politics</li>
-        <li>
-          Suzi Levine - Political donor advisor and former ambassador to
-          Switzerland
-        </li>
-        <li>Thomas Bates - Professional donor advisor</li>
-        <li>Jimmy Hendrix - Author of Giving to Politics Effectively</li>
-        <li>Eric Clapton - Professional donor advisor</li>
-      </ul>
-    </section>
-
-    <section>
-      <Calculator client:load />
-    </section>
-
-    <style>
-      main {
-        margin: auto;
-        padding: 1rem;
-        width: 800px;
-        max-width: calc(100% - 2rem);
-        color: #222;
-        font-size: 20px;
-        line-height: 1.25;
-      }
-      h1 {
-        font-size: 4rem;
-        font-weight: 600;
-        line-height: 1.25;
-        text-align: center;
-        margin-bottom: 1em;
-      }
-      h3 {
-        font-size: 2rem;
-        line-height: 1.25;
-        margin-bottom: 1em;
-      }
-      section {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        border-bottom: 1px solid #ccc;
-      }
-
-      /* give me a nice looking table with bold th, nice spacing, lines between */
-      table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-        border: 1px solid #ddd;
-      }
-      th,
-      td {
-        text-align: left;
-        padding: 16px;
-      }
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-      th {
-        background-color: #4caf50;
-        color: white;
-      }
-      td {
-        border-bottom: 1px solid #ddd;
-      }
-      td:last-child {
-        border-bottom: none;
-      }
-      td:first-child {
-        font-weight: bold;
-      }
-
-      ul li {
-        margin-left: 2rem;
-        margin-bottom: 1rem;
-      }
-    </style>
+    <div class="bg-sun text-darkest">
+      <section class="py-16 max-w-[960px] m-auto"></section>
+    </div>
   </main>
+  <section>
+    <!-- <Calculator client:load /> -->
+  </section>
 </Layout>
