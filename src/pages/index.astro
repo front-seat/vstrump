@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
+import Calculator from "../components/Calculator.tsx";
 ---
 
 <Layout title="The vs. Trump Fund.">
@@ -64,6 +65,10 @@ import Button from "../components/Button.astro";
         <li>Jimmy Hendrix - Author of Giving to Politics Effectively</li>
         <li>Eric Clapton - Professional donor advisor</li>
       </ul>
+    </section>
+
+    <section>
+      <Calculator client:load />
     </section>
 
     <style>
