@@ -2,10 +2,14 @@ import clsx from "clsx";
 
 /** The primary headline font and metrics. */
 export const PLEIN_HEADLINE =
-  "font-plein font-bold text-[100px] leading-[93px] lg:text-[180px] lg:leading-[167.4px]";
+  "font-plein font-bold text-[90px] leading-[86.4px] lg:text-[190px] lg:leading-[171px]";
 
 export type TypographicComponent = React.FC<
   React.PropsWithChildren<{ className?: string }>
+>;
+
+export type TypographicLink = React.FC<
+  React.PropsWithChildren<{ className?: string; href: string }>
 >;
 
 export const H1: TypographicComponent = ({ children, className }) => (
@@ -23,6 +27,19 @@ export const PHeadline: TypographicComponent = ({ children, className }) => (
 /** Mobile-only headline metrics. */
 // export const PLEIN_REGULAR_100 =
 //   "font-plein text-[100px] leading-[93px] font-normal";
+
+/** The secondary heading and metrics. */
+export const PLEIN_SECONDARY_HEADLINE =
+  "font-plein font-bold text-[64px] leading-[76.8px]";
+
+export const H2: TypographicComponent = ({ children, className }) => (
+  <h2 className={clsx(PLEIN_SECONDARY_HEADLINE, className)}>{children}</h2>
+);
+
+export const PSecondaryHeadline: TypographicComponent = ({
+  children,
+  className,
+}) => <p className={clsx(PLEIN_SECONDARY_HEADLINE, className)}>{children}</p>;
 
 /** The primary subhead font and metrics. */
 export const SWITZER_SUBHEAD =
@@ -85,4 +102,13 @@ export const SWITZER_MEDIUM =
 
 export const PMedium: TypographicComponent = ({ children, className }) => (
   <p className={clsx(SWITZER_MEDIUM, className)}>{children}</p>
+);
+
+export const AMedium: TypographicLink = ({ children, className, href }) => (
+  <a
+    href={href}
+    className={clsx(SWITZER_MEDIUM, "underline !leading-[44.8px]", className)}
+  >
+    {children}
+  </a>
 );

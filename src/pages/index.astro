@@ -2,23 +2,33 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import Calculator from "../components/Calculator.tsx";
-import { H1, H3, Em28, P21 } from "../components/Typeography.tsx";
+import {
+  H1,
+  H2,
+  H3,
+  Em28,
+  P21,
+  P28,
+  PMedium,
+  AMedium,
+} from "../components/Typeography.tsx";
 ---
 
 <Layout title="The vs. Trump Fund.">
   <main>
     <section class="py-16 max-w-[960px] mx-8 lg:mx-auto">
-      <H1>
+      <H1 className="text-less-dark">
         <span class="text-sun">vs.<br />TRUMP</span><br />FUND
       </H1>
-      <H3 className="border-t-2 border-medium mt-24 pt-8">
-        Backed by evidence and vouched for by experts - we’ve done the research
-        to give you <span class="text-sun">a one-stop-shop to defeat Trump</span
+      <H3 className="border-t-2 border-medium mt-24 pt-6">
+        Backed by evidence and vouched for by experts &mdash; we’ve done the
+        research to give you <span class="text-sun"
+          >a one-stop-shop to defeat Trump</span
         >.
       </H3>
       <div class="flex flex-col pt-16">
         <div
-          class="flex flex-wrap lg:flex-nowrap lg:space-x-8 border-b border-dark py-6"
+          class="flex flex-wrap lg:flex-nowrap lg:space-x-28 border-b border-dark py-6"
         >
           <p class="text-white w-[304px] flex-shrink-0">
             <Em28>A portfolio of winning projects</Em28>
@@ -29,33 +39,167 @@ import { H1, H3, Em28, P21 } from "../components/Typeography.tsx";
           </P21>
         </div>
         <div
-          class="flex flex-wrap lg:flex-nowrap lg:space-x-8 border-b border-dark py-6"
+          class="flex flex-wrap lg:flex-nowrap lg:space-x-28 border-b border-dark py-6"
         >
           <p class="text-white w-[304px] flex-shrink-0">
             <Em28>2X your impact by giving early</Em28>
           </p>
           <P21 className="text-medium mt-8 lg:mt-0">
             Giving in the first half of 2024 is 2X as impactful as giving close
-            to the election. <a class="text-sun underline" href="#"
-              >Read the blog post</a
+            to the election. <a
+              class="text-sun underline hover:text-white transition-colors transition-150"
+              href="#">Read the blog post</a
             >.
           </P21>
         </div>
         <div
-          class="flex flex-wrap lg:flex-nowrap lg:space-x-8 border-b border-dark py-6"
+          class="flex flex-wrap lg:flex-nowrap lg:space-x-28 border-b border-dark py-6"
         >
           <p class="text-white w-[304px] flex-shrink-0">
             <Em28>We don’t touch your donations.</Em28>
           </p>
           <P21 className="text-medium mt-8 lg:mt-0">
             You donate directly to the organizations through our trusted partner
-            <a class="text-sun underline" href="#">ActBlue</a>.
+            <a
+              class="text-sun underline hover:text-white transition-colors transition-150"
+              href="#">ActBlue</a
+            >.
           </P21>
         </div>
       </div>
     </section>
     <div class="bg-sun text-darkest">
-      <section class="py-16 max-w-[960px] m-auto"></section>
+      <section class="py-16 max-w-[960px] mx-8 lg:mx-auto">
+        <div class="flex flex-col">
+          <!-- how it works -->
+          <div
+            class="flex flex-row flex-wrap lg:flex-nowrap lg:space-x-28 py-6"
+          >
+            <!-- 'how it works' headline -->
+            <div class="text-darkest w-[304px] flex-shrink-0 flex flex-col">
+              <H2>How it works</H2>
+              <P28 className="pt-6">
+                Your donation is spread across these impactful programs.
+              </P28>
+              <p class="pt-8 text-[15px] leading-[22.5px] font-switzer">
+                Last updated January 18, 2024
+              </p>
+            </div>
+
+            <!-- 'how it works' table -->
+            <div class="flex flex-col">
+              <div
+                class="flex flex-row flex-nowrap border-t border-b py-6 border-darkest items-center space-x-8"
+              >
+                <P21 className="flex-grow">
+                  The most quantitatively measurable and cost-effective tactics
+                  for voter registration, persuasion, and turnout
+                </P21>
+                <PMedium className="flex-shrink-0">30%</PMedium>
+              </div>
+              <div
+                class="flex flex-row flex-nowrap border-b py-6 border-darkest items-center space-x-8"
+              >
+                <P21 className="flex-grow">
+                  Organizations that focus on specific communities and
+                  demographics
+                </P21>
+                <PMedium className="flex-shrink-0">25%</PMedium>
+              </div>
+              <div
+                class="flex flex-row flex-nowrap border-b py-6 border-darkest items-center space-x-8"
+              >
+                <P21 className="flex-grow">Biden Campaign</P21>
+                <PMedium className="flex-shrink-0">20%</PMedium>
+              </div>
+              <div
+                class="flex flex-row flex-nowrap border-b py-6 border-darkest items-center space-x-8"
+              >
+                <P21 className="flex-grow">
+                  Other competitive federal races (the House and Senate are
+                  backups in case Trump wins)
+                </P21>
+                <PMedium className="flex-shrink-0">15%</PMedium>
+              </div>
+              <div
+                class="flex flex-row flex-nowrap border-b py-6 border-darkest items-center space-x-8"
+              >
+                <P21 className="flex-grow">
+                  Infrastructure and innovative approaches
+                </P21>
+                <PMedium className="flex-shrink-0">10%</PMedium>
+              </div>
+            </div>
+          </div>
+          <!-- the approach -->
+          <div
+            class="flex flex-row flex-wrap lg:flex-nowrap lg:space-x-28 py-6"
+          >
+            <div class="text-darkest w-[304px] flex-shrink-0 flex flex-col">
+              <P28 className="pt-6">
+                This approach and the organizations we recommend have been
+                vetted by the following political experts.
+              </P28>
+            </div>
+
+            <!-- list of political experts -->
+            <div class="flex flex-col -space-y-4">
+              <!-- slifka -->
+              <div class="flex flex-col py-6">
+                <AMedium
+                  className="hover:text-medium transition-colors transition-150"
+                  href="#"
+                >
+                  David Slifka
+                </AMedium>
+                <P21>Author of Innovation and Money in Politics</P21>
+              </div>
+              <!-- levine -->
+              <div class="flex flex-col py-6">
+                <AMedium
+                  className="hover:text-medium transition-colors transition-150"
+                  href="#"
+                >
+                  Suzi Levine
+                </AMedium>
+                <P21>
+                  Political donor advisor and former ambassador to Switzerland
+                </P21>
+              </div>
+              <!-- bates -->
+              <div class="flex flex-col py-6">
+                <AMedium
+                  className="hover:text-medium transition-colors transition-150"
+                  href="#"
+                >
+                  Thomas Bates
+                </AMedium>
+                <P21>Political donor advisor</P21>
+              </div>
+              <!-- hendrix -->
+              <div class="flex flex-col py-6">
+                <AMedium
+                  className="hover:text-medium transition-colors transition-150"
+                  href="#"
+                >
+                  Jimi Hendrix
+                </AMedium>
+                <P21>Guitar hero</P21>
+              </div>
+              <!-- clapton -->
+              <div class="flex flex-col py-6">
+                <AMedium
+                  className="hover:text-medium transition-colors transition-150"
+                  href="#"
+                >
+                  Eric Clapton
+                </AMedium>
+                <P21>Also pretty good at the guitar</P21>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
   <section>
