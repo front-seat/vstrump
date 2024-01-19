@@ -80,6 +80,13 @@ export const P24: TypographicComponent = ({ children, className }) => (
   <p className={clsx(SWITZER_REGULAR_24, className)}>{children}</p>
 );
 
+export const SWITZER_BOLD_24 =
+  "font-switzer font-bold text-[24px] leading-[36px]";
+
+export const Em24: TypographicComponent = ({ children, className }) => (
+  <em className={clsx(SWITZER_BOLD_24, "not-italic", className)}>{children}</em>
+);
+
 export const SWITZER_REGULAR_21 =
   "font-switzer font-normal text-[21px] leading-[31.5px]";
 
