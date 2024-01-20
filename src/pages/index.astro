@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
+import { DonateNowButton } from "../components/Button.tsx";
 import Calculator from "../components/Calculator.tsx";
 import {
   H1,
@@ -28,7 +28,7 @@ import {
         >.
       </P24>
       <div class="flex-shrink-0">
-        <Button title="Donate Now" />
+        <DonateNowButton client:visible />
       </div>
     </div>
 
@@ -46,7 +46,7 @@ import {
         >.
       </P24>
       <div class="visible lg:hidden pt-6">
-        <Button title="Donate Now" />
+        <DonateNowButton client:visible />
       </div>
 
       <!-- more of the hero section stuff -->
@@ -237,6 +237,14 @@ import {
       </section>
     </div>
 
+    <!-- the calculator -->
+    <section
+      id="donateNow"
+      class="pt-16 pb-16 lg:pb-32 max-w-[960px] mx-4 lg:mx-auto"
+    >
+      <Calculator client:visible />
+    </section>
+
     <!-- question section -->
     <div class="bg-dark text-white">
       <section class="py-16 lg:py-32 max-w-[960px] mx-4 lg:mx-auto">
@@ -371,7 +379,7 @@ import {
               Let’s win this November. If you wait, we lose.
             </P28>
             <div class="flex-shrink-0 mt-8 lg:mt-0">
-              <Button title="Donate Now" />
+              <DonateNowButton client:visible />
             </div>
           </div>
         </div>
@@ -391,8 +399,5 @@ import {
         </div>
       </footer>
     </div>
-    <section>
-      <!-- <Calculator client:load /> -->
-    </section>
   </main>
 </Layout>
