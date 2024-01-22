@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 /** The primary headline font and metrics. */
 export const PLEIN_HEADLINE =
-  "font-plein font-normal text-[90px] leading-[86.4px] lg:text-[190px] lg:leading-[171px]";
+  "font-plein font-normal text-[90px] leading-[86.4px] md:text-[190px] md:leading-[171px]";
 
 export type TypographicComponent = React.FC<
   React.PropsWithChildren<{ className?: string }>
@@ -47,7 +47,7 @@ export const PSecondaryHeadline: TypographicComponent = ({
 
 /** The primary subhead font and metrics. */
 export const SWITZER_SUBHEAD =
-  "font-switzer font-light text-[40px] leading-[48px] lg:text-[50px] lg:leading-[65px]";
+  "font-switzer font-light text-[40px] leading-[48px] md:text-[50px] md:leading-[65px]";
 
 /** Desktop-only subhead metrics. */
 // export const SWITZER_LIGHT_50 =
@@ -109,7 +109,7 @@ export const P21: TypographicComponent = ({ children, className }) => (
 //   "font-switzer font-medium text-[28px] leading-[32px]";
 
 export const SWITZER_MEDIUM =
-  "font-switzer font-medium text-[28px] leading-[32px] lg:text-[32px] lg:leading-[36.4px]";
+  "font-switzer font-medium text-[28px] leading-[32px] md:text-[32px] md:leading-[36.4px]";
 
 export const PMedium: TypographicComponent = ({ children, className }) => (
   <p className={clsx(SWITZER_MEDIUM, className)}>{children}</p>

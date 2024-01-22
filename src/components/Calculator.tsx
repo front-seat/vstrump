@@ -198,11 +198,11 @@ const AllocationComponent = ({
   index: number;
 }) => {
   return (
-    <div className="flex flex-row lg:space-x-8 items-start flex-wrap lg:flex-nowrap">
+    <div className="flex flex-row md:space-x-8 items-start flex-wrap md:flex-nowrap">
       <P28>
         <Em28 className="text-white">{index}.</Em28>
       </P28>
-      <div className="flex flex-col flex-shrink pt-4 lg:pt-0">
+      <div className="flex flex-col flex-shrink pt-4 md:pt-0">
         <P28>
           <Em28 className="text-white">
             {allocation.name} &mdash; {formatPerc(allocation.perc)}
@@ -212,7 +212,7 @@ const AllocationComponent = ({
           {allocation.description}
         </div>
       </div>
-      <div className="min-w-[21%] pt-6 lg:pt-0">
+      <div className="min-w-[21%] pt-6 md:pt-0">
         <Button
           title={`Donate ${formatUSD(usd, true, true)}`}
           onClick={() => {

@@ -20,7 +20,7 @@ import {
   <main>
     <!-- donate button and banner for desktop layout only -->
     <div
-      class="hidden lg:flex pt-12 flex-row max-w-[960px] lg:mx-auto space-x-8"
+      class="hidden md:flex pt-12 flex-row max-w-[768px] lg:max-w-[960px] md:mx-auto space-x-8"
     >
       <P24 className="text-medium flex-grow">
         Donate to a portfolio of high impact campaigns <span class="text-white"
@@ -33,24 +33,26 @@ import {
     </div>
 
     <!-- top section! (hero; etc) -->
-    <section class="pt-16 pb-16 lg:pb-32 max-w-[960px] mx-4 lg:mx-auto">
+    <section
+      class="pt-16 pb-16 md:pt-32 md:pb-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
+    >
       <H1 className="text-less-dark">
         <span class="text-sun"><span class="italic">vs.</span><br />TRUMP</span
         ><br />FUND
       </H1>
 
       <!-- donate button for mobile views -->
-      <P24 className="visible lg:hidden text-medium pt-6">
+      <P24 className="visible md:hidden text-medium pt-6">
         Donate to a portfolio of high impact campaigns <span class="text-white"
           >to defeat Trump</span
         >.
       </P24>
-      <div class="visible lg:hidden pt-6">
+      <div class="visible md:hidden pt-6">
         <DonateNowButton client:load />
       </div>
 
       <!-- more of the hero section stuff -->
-      <H3 className="border-t-2 border-medium mt-32 lg:mt-44 pt-6">
+      <H3 className="border-t-2 border-medium mt-32 md:mt-44 pt-6">
         Backed by evidence and vouched for by experts &mdash; we’ve done the
         research to give you <span class="text-sun"
           >a one-stop-shop to defeat Trump</span
@@ -60,23 +62,23 @@ import {
       <!-- hero section details -- what even is this? -->
       <div class="flex flex-col pt-16">
         <div
-          class="flex flex-wrap lg:flex-nowrap lg:space-x-28 border-b border-dark py-6"
+          class="flex flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 border-b border-dark py-6"
         >
           <p class="text-white w-[304px] flex-shrink-0">
             <Em28>A portfolio of winning projects</Em28>
           </p>
-          <P21 className="text-medium mt-8 lg:mt-0">
+          <P21 className="text-medium mt-8 md:mt-0">
             Each project is approved by professional donor advisors and based on
             metrics such as cost-per-vote.
           </P21>
         </div>
         <div
-          class="flex flex-wrap lg:flex-nowrap lg:space-x-28 border-b border-dark py-6"
+          class="flex flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 border-b border-dark py-6"
         >
           <p class="text-white w-[304px] flex-shrink-0">
             <Em28>2X your impact by giving early</Em28>
           </p>
-          <P21 className="text-medium mt-8 lg:mt-0">
+          <P21 className="text-medium mt-8 md:mt-0">
             Giving in the first half of 2024 is 2X as impactful as giving close
             to the election. <a
               class="text-sun underline hover:text-white transition-colors duration-200"
@@ -84,11 +86,13 @@ import {
             >.
           </P21>
         </div>
-        <div class="flex flex-wrap lg:flex-nowrap lg:space-x-28 py-6">
+        <div
+          class="flex flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
+        >
           <p class="text-white w-[304px] flex-shrink-0">
             <Em28>We don’t touch your donations.</Em28>
           </p>
-          <P21 className="text-medium mt-8 lg:mt-0">
+          <P21 className="text-medium mt-8 md:mt-0">
             You donate directly to the organizations through our trusted partner
             <a
               class="text-sun underline hover:text-white transition-colors duration-200"
@@ -101,11 +105,13 @@ import {
 
     <!-- yellow section! -->
     <div class="bg-sun text-darkest">
-      <section class="py-16 lg:py-32 max-w-[960px] mx-4 lg:mx-auto">
+      <section
+        class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
+      >
         <div class="flex flex-col">
           <!-- how it works -->
           <div
-            class="flex flex-row flex-wrap lg:flex-nowrap lg:space-x-28 py-6"
+            class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
           >
             <!-- 'how it works' headline -->
             <div class="text-darkest w-[304px] flex-shrink-0 flex flex-col">
@@ -114,7 +120,7 @@ import {
                 Your donation is spread across these impactful programs.
               </P28>
               <p
-                class="pt-8 pb-4 lg:pb-0 text-[15px] leading-[22.5px] font-switzer"
+                class="pt-8 pb-4 md:pb-0 text-[15px] leading-[22.5px] font-switzer"
               >
                 Last updated January 18, 2024
               </p>
@@ -168,7 +174,7 @@ import {
 
           <!-- the approach -->
           <div
-            class="flex flex-row flex-wrap lg:flex-nowrap lg:space-x-28 py-6"
+            class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
           >
             <div class="text-darkest w-[304px] flex-shrink-0 flex flex-col">
               <P28 className="pt-6">
@@ -178,7 +184,7 @@ import {
             </div>
 
             <!-- list of political experts -->
-            <div class="flex flex-col -space-y-4 pt-4 lg:pt-0">
+            <div class="flex flex-col -space-y-4 pt-4 md:pt-0">
               <!-- slifka -->
               <div class="flex flex-col py-6">
                 <AMedium
@@ -245,22 +251,24 @@ import {
     <!-- the calculator -->
     <section
       id="donateNow"
-      class="pt-16 pb-16 lg:pt-32 lg:pb-32 max-w-[960px] mx-4 lg:mx-auto"
+      class="pt-16 pb-16 md:pt-32 md:pb-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
     >
       <Calculator client:load />
     </section>
 
     <!-- question section -->
     <div class="bg-dark text-white">
-      <section class="py-16 lg:py-32 max-w-[960px] mx-4 lg:mx-auto">
+      <section
+        class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
+      >
         <div class="flex flex-col">
           <div
-            class="flex flex-row flex-wrap lg:flex-nowrap lg:space-x-28 py-6"
+            class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
           >
             <H2>Questions</H2>
 
             <!-- list of questions -->
-            <div class="flex flex-col -space-y-4 pt-4 lg:pt-0">
+            <div class="flex flex-col -space-y-4 pt-4 md:pt-0">
               <!-- question -->
               <div class="flex flex-col py-6">
                 <P24><Em24>How did you decide on this strategy?</Em24></P24>
@@ -378,12 +386,12 @@ import {
 
           <!-- post question 'let's win' section -->
           <div
-            class="flex flex-row flex-wrap lg:flex-nowrap lg:space-x-28 py-6"
+            class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
           >
             <P28 className="text-white flex-grow">
               Let’s win this November. If you wait, we lose.
             </P28>
-            <div class="flex-shrink-0 mt-8 lg:mt-0">
+            <div class="flex-shrink-0 mt-8 md:mt-0">
               <DonateNowButton client:load />
             </div>
           </div>
@@ -393,7 +401,9 @@ import {
 
     <!-- footer -->
     <div class="bg-darkest text-white">
-      <footer class="py-16 lg:py-32 max-w-[960px] mx-4 lg:mx-auto">
+      <footer
+        class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
+      >
         <div class="flex flex-row">
           <p class="flex-grow text-medium">©2024 vs. Trump Fund</p>
           <a

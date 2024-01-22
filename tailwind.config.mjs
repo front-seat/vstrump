@@ -16,6 +16,7 @@ export default {
         switzer: ["Switzer", "sans-serif"],
       },
       screens: {
+        md: '768px',
         lg: '960px',
       }
     },
