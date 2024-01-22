@@ -9,7 +9,11 @@ export type TypographicComponent = React.FC<
 >;
 
 export type TypographicLink = React.FC<
-  React.PropsWithChildren<{ className?: string; href: string }>
+  React.PropsWithChildren<{
+    className?: string;
+    href?: string;
+    onClick?: () => void;
+  }>
 >;
 
 export const H1: TypographicComponent = ({ children, className }) => (
@@ -111,10 +115,20 @@ export const PMedium: TypographicComponent = ({ children, className }) => (
   <p className={clsx(SWITZER_MEDIUM, className)}>{children}</p>
 );
 
-export const AMedium: TypographicLink = ({ children, className, href }) => (
+export const AMedium: TypographicLink = ({
+  children,
+  className,
+  href,
+  onClick,
+}) => (
   <a
     href={href}
-    className={clsx(SWITZER_MEDIUM, "underline !leading-[44.8px]", className)}
+    onClick={onClick}
+    className={clsx(
+      SWITZER_MEDIUM,
+      "cursor-pointer underline !leading-[44.8px]",
+      className
+    )}
   >
     {children}
   </a>
