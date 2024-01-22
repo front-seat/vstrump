@@ -264,8 +264,6 @@ const DonationAmountBox = ({
     // remove all non-numeric characters
     const cleaned = text.replace(/[^0-9]/g, "");
 
-    console.log(cleaned);
-
     // if it's empty, bail
     if (cleaned === "") {
       return;

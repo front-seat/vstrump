@@ -28,7 +28,7 @@ import {
         >.
       </P24>
       <div class="flex-shrink-0">
-        <DonateNowButton client:visible />
+        <DonateNowButton client:load />
       </div>
     </div>
 
@@ -46,7 +46,7 @@ import {
         >.
       </P24>
       <div class="visible lg:hidden pt-6">
-        <DonateNowButton client:visible />
+        <DonateNowButton client:load />
       </div>
 
       <!-- more of the hero section stuff -->
@@ -184,6 +184,7 @@ import {
                 <AMedium
                   className="hover:text-medium transition-colors duration-200"
                   onClick={() => alert("TODO: link")}
+                  client:load
                 >
                   David Slifka
                 </AMedium>
@@ -194,6 +195,7 @@ import {
                 <AMedium
                   className="hover:text-medium transition-colors duration-200"
                   onClick={() => alert("TODO: link")}
+                  client:load
                 >
                   Suzi Levine
                 </AMedium>
@@ -206,6 +208,7 @@ import {
                 <AMedium
                   className="hover:text-medium transition-colors duration-200"
                   onClick={() => alert("TODO: link")}
+                  client:load
                 >
                   Thomas Bates
                 </AMedium>
@@ -216,6 +219,7 @@ import {
                 <AMedium
                   className="hover:text-medium transition-colors duration-200"
                   onClick={() => alert("TODO: link")}
+                  client:load
                 >
                   Jimi Hendrix
                 </AMedium>
@@ -226,6 +230,7 @@ import {
                 <AMedium
                   className="hover:text-medium transition-colors duration-200"
                   onClick={() => alert("TODO: link")}
+                  client:load
                 >
                   Eric Clapton
                 </AMedium>
@@ -242,7 +247,7 @@ import {
       id="donateNow"
       class="pt-16 pb-16 lg:pb-32 max-w-[960px] mx-4 lg:mx-auto"
     >
-      <Calculator client:visible />
+      <Calculator client:load />
     </section>
 
     <!-- question section -->
@@ -379,7 +384,7 @@ import {
               Let’s win this November. If you wait, we lose.
             </P28>
             <div class="flex-shrink-0 mt-8 lg:mt-0">
-              <DonateNowButton client:visible />
+              <DonateNowButton client:load />
             </div>
           </div>
         </div>
