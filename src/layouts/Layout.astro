@@ -18,6 +18,32 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- CONSIDER get a Twitter handle <meta name="twitter:site" content="@vsTrumpFund" /> -->
+    <meta name="twitter:title" content="vs. Trump Fund" />
+    <meta
+      name="twitter:description"
+      content="Backed by evidence and vouched for by experts - we’ve done the research to give you a one-stop-shop to defeat Trump."
+    />
+    <meta
+      name="twitter:image"
+      content="https://vstrump.org/img/vs_trump_fund-800x418.png"
+    />
+
+    <!-- Facebook (open graph) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="vs. Trump Fund" />
+    <meta
+      property="og:description"
+      content="Backed by evidence and vouched for by experts - we’ve done the research to give you a one-stop-shop to defeat Trump."
+    />
+    <meta
+      property="og:image"
+      content="https://vstrump.org/img/vs_trump_fund-1200x630.png"
+    />
+    <meta property="og:url" content="https://vstrump.org/" />
   </head>
   <body>
     <slot />
