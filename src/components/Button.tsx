@@ -21,7 +21,18 @@ const Button: React.FC<Props> = ({ title, className, onClick }) => (
 export const DonateNowButton: React.FC = () => (
   <Button
     title="Donate Now"
-    onClick={() => document.getElementById("donateNow")?.scrollIntoView()}
+    onClick={() => {
+      // document.getElementById("donation-amount")?.scrollIntoView();
+      const donationAmountInput = document.getElementById(
+        "donation-amount"
+      ) as HTMLInputElement;
+      donationAmountInput?.focus();
+      // select all text in the input
+      donationAmountInput?.setSelectionRange(
+        0,
+        donationAmountInput.value.length
+      );
+    }}
   />
 );
 

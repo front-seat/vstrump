@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import clsx from "clsx";
 import Button from "./Button";
@@ -257,6 +257,34 @@ const DonationAmountBox = ({
 }) => {
   const [text, setText] = useState<string>(formatUSD(usd, true, false));
 
+  useEffect(() => {
+    // is there a decimal point?
+    const hasDecimal = text.indexOf(".") !== -1;
+
+    // remove all non-numeric characters
+    const cleaned = text.replace(/[^0-9]/g, "");
+
+    console.log(cleaned);
+
+    // if it's empty, bail
+    if (cleaned === "") {
+      return;
+    }
+
+    // parse an integer
+    const parsed = parseInt(cleaned);
+
+    // if it's not a number, bail
+    if (isNaN(parsed)) {
+      return;
+    }
+
+    // convert to USD (using hasDecimal)
+    const cents = hasDecimal ? parsed : parsed * 100;
+    const newUSD = cents / 100;
+    setUSD(newUSD);
+  }, [text]);
+
   return (
     <div>
       <p className="font-switzer font-bold uppercase text-[15px] leading-[22.5px] text-white">
@@ -266,15 +294,12 @@ const DonationAmountBox = ({
         <div className="text-white pl-4 flex-grow leading-10">$</div>
         <div className="max-w-[100%] flex-shrink leading-10">
           <input
+            id="donation-amount"
             type="text"
+            inputMode="decimal"
             value={text}
-            onChange={(e) => {
-              const parsed = parseFloat(e.target.value);
-              if (!isNaN(parsed) && parsed > 0 && parsed < 250000) {
-                setUSD(parseInt(e.target.value));
-              }
-            }}
-            className="text-right bg-transparent pr-4 outline-none transition-colors duration-200 leading-10 focus:bg-dark w-[100%] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            onChange={(e) => setText(e.target.value)}
+            className="text-right caret-sun bg-transparent pr-4 outline-none transition-colors duration-200 leading-10 focus:bg-dark w-[100%] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           />
         </div>
       </div>
