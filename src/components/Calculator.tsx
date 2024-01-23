@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import clsx from "clsx";
 import Button from "./Button";
 
 import { P21, P28, Em28, H2 } from "./Typeography";
@@ -18,13 +17,6 @@ const formatUSD = (
   });
   return showDollarSign ? formatted : formatted.slice(1);
 };
-
-/** Format cents as dollars, with commas. */
-const formatCents = (
-  cents: number,
-  showCents: boolean = true,
-  showDollarSign: boolean = true
-) => formatUSD(cents / 100, showCents, showDollarSign);
 
 /** Format a percentage (from 0.0 to 1.0) in human-readable form. */
 const formatPerc = (perc: number) => `${Math.round(perc * 100)}%`;
@@ -173,19 +165,6 @@ const DISTRIBUTION: Distribution = [
     url: () => "https://secure.actblue.com/donate/dsdefeattrump1",
   },
 ];
-
-/** Donation link visuals */
-const DonationLink = ({
-  usd,
-  url,
-}: {
-  usd: number;
-  url: (usd: number) => string;
-}) => (
-  <div className="allocation-link mt-4 underline hovere:bg-gray-200">
-    <a href={url(usd)}>{url(usd)}</a>
-  </div>
-);
 
 /** React component that displays a single Allocation. */
 const AllocationComponent = ({
