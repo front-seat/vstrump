@@ -120,7 +120,7 @@ const DISTRIBUTION: Distribution = [
     name: "Biden Campaign",
     description: (
       <P21 className="text-medium">
-        Donating to the Biden campaign is impactful because their analysts know
+        Donating to the Biden campaign is impactful because they know
         the most important voters to target with get-out-the-vote and
         advertising.
       </P21>
