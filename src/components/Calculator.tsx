@@ -51,19 +51,13 @@ const DISTRIBUTION: Distribution = [
           >
             Everybody Votes
           </a>
-          ,{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
+          , and {" "}
+         <a 
+        href="https://www.workingamerica.org/"
+        className="underline hover:text-white transition-colors duration-200"
+        target="_blank"
+        >
             Working America
-          </a>
-          , and the{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
-            Movement Voter Project
           </a>{" "}
           because of their low cost per voter.
         </P21>
