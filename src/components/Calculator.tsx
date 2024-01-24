@@ -59,8 +59,7 @@ const DISTRIBUTION: Distribution = [
           target="_blank"
         >
             Working America
-          </a>{" "}
-          because of their low cost per vote.
+          </a>.
         </P21>
       </>
     ),
@@ -133,7 +132,7 @@ const DISTRIBUTION: Distribution = [
     description: (
       <P21 className="text-medium">
         Good house candidates help turn out votes for Biden. 
-        Winning the house is also a good strategy in case Trump wins. We've chosen
+        Winning the house a good strategy in case Trump wins. We've chosen
         the 10 most impactful house races according to {" "}
          <a 
           href="https://swingleft.org/"
