@@ -63,7 +63,7 @@ const DISTRIBUTION: Distribution = [
         </P21>
       </>
     ),
-    perc: 0.3,
+    perc: 0.4,
     url: () => "https://secure.actblue.com/donate/dsdefeattrump1",
   },
   {
@@ -73,11 +73,17 @@ const DISTRIBUTION: Distribution = [
         <P21 className="text-medium">
           These organizations build long-term relationships with specific
           communities and demographics. These organizations focus on being
-          trusted messengers for getting out the vote. These are 501(c)3
-          tax-deductible donations.
+          trusted messengers for getting out the vote.
         </P21>
         <P21 className="text-medium">
           We’ve chosen{" "}
+          <a
+            onClick={() => alert("TODO: link")}
+            className="underline hover:text-white transition-colors duration-200"
+          >
+            The Movement Voter Project
+          </a>
+          ,{" "}
           <a
             onClick={() => alert("TODO: link")}
             className="underline hover:text-white transition-colors duration-200"
@@ -102,7 +108,7 @@ const DISTRIBUTION: Distribution = [
         </P21>
       </>
     ),
-    perc: 0.25,
+    perc: 0.2,
     url: () => "https://secure.actblue.com/donate/dsdefeattrump1",
   },
   {
@@ -125,38 +131,8 @@ const DISTRIBUTION: Distribution = [
         local candidate can also help turn out votes for Biden.
       </P21>
     ),
-    perc: 0.15,
+    perc: 0.2,
     url: () => "https://secure.actblue.com/donate/swingleft_house_2024/",
-  },
-  {
-    name: "Infrastructure & Innovation",
-    description: (
-      <>
-        <P21 className="text-medium">
-          These organizations work on innovative approaches to voter turnout
-          such as social media or important Democratic infrastructure.
-        </P21>
-        <P21 className="text-medium">
-          We’ve chosen{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
-            Accelerate Change
-          </a>{" "}
-          and the{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
-            DNC
-          </a>{" "}
-          for data coordination.
-        </P21>{" "}
-      </>
-    ),
-    perc: 0.1,
-    url: () => "https://secure.actblue.com/donate/dsdefeattrump1",
   },
 ];
 
