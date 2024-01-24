@@ -65,7 +65,8 @@ const DISTRIBUTION: Distribution = [
       </>
     ),
     perc: 0.4,
-    url: () => "https://secure.actblue.com/donate/voter-turnout-vs-trump",
+    url: (usd: number) =>
+      `https://secure.actblue.com/donate/voter-turnout-vs-trump?amount=${usd}`,
   },
   {
     name: "Community Specific",
@@ -114,7 +115,8 @@ const DISTRIBUTION: Distribution = [
       </>
     ),
     perc: 0.2,
-    url: () => "https://secure.actblue.com/donate/community-specific-vs-trump",
+    url: (usd: number) =>
+      `https://secure.actblue.com/donate/community-specific-vs-trump?amount=${usd}`,
   },
   {
     name: "Biden Campaign",
@@ -125,7 +127,8 @@ const DISTRIBUTION: Distribution = [
       </P21>
     ),
     perc: 0.2,
-    url: () => "https://secure.actblue.com/donate/biden-vs-trump",
+    url: (usd: number) =>
+      `https://secure.actblue.com/donate/biden-vs-trump?amount=${usd}`,
   },
   {
     name: "Competitive House Races",
@@ -149,8 +152,8 @@ const DISTRIBUTION: Distribution = [
       </>
     ),
     perc: 0.2,
-    url: () =>
-      "https://secure.actblue.com/donate/competitive-house-races-vs-trump",
+    url: (usd: number) =>
+      `https://secure.actblue.com/donate/competitive-house-races-vs-trump?amount=${usd}`,
   },
 ];
 
