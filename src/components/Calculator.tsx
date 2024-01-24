@@ -272,7 +272,7 @@ const Calculator = () => {
   const [usd, setUSD] = useState(5000);
   return (
     <div className="flex flex-col space-y-6">
-      <H2 className="text-white">Make your donation</H2>
+      <H2 className="text-white">How much is this election worth to you?</H2>
       <P28 className="text-white">
         Enter the amount you’d like to donate and we’ll
         calculate how much to donate to where:
