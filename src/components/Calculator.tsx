@@ -44,22 +44,23 @@ const DISTRIBUTION: Distribution = [
           tax-deductible donations.
         </P21>
         <P21 className="text-medium">
-          We’ve chosen the {" "}
-          <a 
-          href="https://movement.vote/"
-          className="underline hover:text-white transition-colors duration-200"
-          target="_blank"
-        >
+          We’ve chosen the{" "}
+          <a
+            href="https://movement.vote/"
+            className="underline hover:text-white transition-colors duration-200"
+            target="_blank"
+          >
             Movement Voter Project
-          </a>
-           {" "} and {" "}
-         <a 
-          href="https://www.workingamerica.org/"
-          className="underline hover:text-white transition-colors duration-200"
-          target="_blank"
-        >
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://www.workingamerica.org/"
+            className="underline hover:text-white transition-colors duration-200"
+            target="_blank"
+          >
             Working America
-          </a>.
+          </a>
+          .
         </P21>
       </>
     ),
@@ -72,40 +73,40 @@ const DISTRIBUTION: Distribution = [
       <>
         <P21 className="text-medium">
           These organizations build long-term relationships with specific
-          communities and demographics. They are trusted messengers in 
-          critical battleground states.
+          communities and demographics. They are trusted messengers in critical
+          battleground states.
         </P21>
         <P21 className="text-medium">
           We’ve chosen{" "}
-          <a 
-          href="https://www.somosvotantes.com/"
-          className="underline hover:text-white transition-colors duration-200"
-          target="_blank"
-        >
+          <a
+            href="https://www.somosvotantes.com/"
+            className="underline hover:text-white transition-colors duration-200"
+            target="_blank"
+          >
             Somos Votantes
           </a>
           ,{" "}
-          <a 
-          href="https://www.blocbybloc.org/"
-          className="underline hover:text-white transition-colors duration-200"
-          target="_blank"
-        >
+          <a
+            href="https://www.blocbybloc.org/"
+            className="underline hover:text-white transition-colors duration-200"
+            target="_blank"
+          >
             Black Leaders Organizing Communities
           </a>
-           , the {" "}
-           <a 
-          href="https://newgeorgiaproject.org/"
-          className="underline hover:text-white transition-colors duration-200"
-          target="_blank"
-        >
+          , the{" "}
+          <a
+            href="https://newgeorgiaproject.org/"
+            className="underline hover:text-white transition-colors duration-200"
+            target="_blank"
+          >
             New Georgia Project
           </a>
-          , and {" "}
-           <a 
-          href="https://www.luchaaz.org/"
-          className="underline hover:text-white transition-colors duration-200"
-          target="_blank"
-        >
+          , and{" "}
+          <a
+            href="https://www.luchaaz.org/"
+            className="underline hover:text-white transition-colors duration-200"
+            target="_blank"
+          >
             LUCHA Arizona
           </a>
           .
@@ -119,9 +120,8 @@ const DISTRIBUTION: Distribution = [
     name: "Biden Campaign",
     description: (
       <P21 className="text-medium">
-        Donating to the Biden campaign is impactful because they know
-        the most important voters to target with get-out-the-vote and
-        advertising.
+        Donating to the Biden campaign is impactful because they know the most
+        important voters to target with get-out-the-vote and advertising.
       </P21>
     ),
     perc: 0.2,
@@ -130,24 +130,27 @@ const DISTRIBUTION: Distribution = [
   {
     name: "Competitive House Races",
     description: (
-      <P21 className="text-medium">
-        Good house candidates help turn out votes for Biden. 
-        Winning the house a good strategy in case Trump wins. 
-      
-      </P21>
-      <P21 className="text-medium">
-        We've chosen the 10 most impactful house races according to {" "}
-         <a 
-          href="https://swingleft.org/"
-          className="underline hover:text-white transition-colors duration-200"
-          target="_blank"
-        >
+      <>
+        <P21 className="text-medium">
+          Good house candidates help turn out votes for Biden. Winning the house
+          a good strategy in case Trump wins.
+        </P21>
+        <P21 className="text-medium">
+          We've chosen the 10 most impactful house races according to{" "}
+          <a
+            href="https://swingleft.org/"
+            className="underline hover:text-white transition-colors duration-200"
+            target="_blank"
+          >
             Swing Left
-          </a>. 
-      </P21>
+          </a>
+          .
+        </P21>
+      </>
     ),
     perc: 0.2,
-    url: () => "https://secure.actblue.com/donate/competitive-house-races-vs-trump",
+    url: () =>
+      "https://secure.actblue.com/donate/competitive-house-races-vs-trump",
   },
 ];
 
@@ -276,8 +279,7 @@ const Calculator = () => {
     <div className="flex flex-col space-y-6">
       <H2 className="text-white">Make your donation</H2>
       <P28 className="text-white">
-        Enter the amount you’d like to donate and we’ll
-        create donation links:
+        Enter the amount you’d like to donate and we’ll create donation links:
       </P28>
       <DonationAmountBox usd={usd} setUSD={setUSD} />
       <DistributionComponent distribution={DISTRIBUTION} usd={usd} />

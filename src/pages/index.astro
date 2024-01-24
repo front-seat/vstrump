@@ -12,7 +12,6 @@ import {
   P24,
   P28,
   PMedium,
-  AMedium,
 } from "../components/Typeography.tsx";
 ---
 
@@ -148,174 +147,177 @@ import {
               <div
                 class="flex flex-row flex-nowrap py-6 border-darkest items-center space-x-8"
               >
-                <P21 className="flex-grow">
-                  Other competitive house races
-                </P21>
+                <P21 className="flex-grow">Other competitive house races</P21>
                 <PMedium className="flex-shrink-0">20%</PMedium>
               </div>
             </div>
           </div>
-     </section>
-    </div>
-    <!-- the calculator -->
-    <section
-      id="donateNow"
-      class="pt-16 pb-16 md:pt-32 md:pb-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
-    >
-      <Calculator client:load />
-    </section>
-
-    <!-- question section -->
-    <div class="bg-dark text-white">
-      <section
-        class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
-      >
-        <div class="flex flex-col">
-          <div
-            class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
-          >
-            <H2>Questions</H2>
-
-            <!-- list of questions -->
-            <div class="flex flex-col -space-y-4 pt-4 md:pt-0">
-              <!-- question -->
-              <div class="flex flex-col py-6">
-                <P24><Em24>How did you decide on this strategy?</Em24></P24>
-                <P24 className="text-medium">
-                  We surveyed the top political donor advisors to pick the most impactful projects
-                  to defeat Trump. 
-                </P24>
-                <P24 className="text-medium mt-4">
-                  Our goal is to provide the most effective giving strategy
-                  for people not working with a donor advisor. 
-                </P24>
-              </div>
-              <!-- question -->
-              <div class="flex flex-col py-6">
-                <P24><Em24>How do I organize my friends to give?</Em24></P24>
-                <P24 className="text-medium">
-                  Please start by forwarding this website to your friends and then
-                  <a
-                    href="#TODO"
-                    class="underline hover:text-white transition-colors duration-200"
-                    >contact us</a
-                  > for our organizing playbook.
-               <P24 className="text-medium mt-4">
-                  If you can raise $250 each hour you reach out to your friends,  
-                  it is the highest-impact volunteer opportunity to defeat Trump.
-                </P24>
-                </P24>
-              </div>
-
-              <!-- question -->
-              <div class="flex flex-col py-6">
-                <P24><Em24>How much should I give?</Em24></P24>
-                <P24 className="text-medium">
-                  It's personal &mdash; but how much is this election worth to you? 
-                </P24>
-                <P24 className="text-medium mt-4">
-                  We've decided to 10X our impact this election by giving 5X as
-                  much as we gave in 2020, and giving 2X as effectively by giving in the first half of 2024.
-               </P24>
-               <P24 className="text-medium mt-4">
-                  <a
-                    href="#TODO"
-                    class="underline hover:text-white transition-colors duration-200"
-                    >Read the blog post</a
-                  > on why giving early 2X as effective.
-                </P24>
-              </div>
-
-              <!-- question -->
-              <div class="flex flex-col py-6">
-                <P24><Em24>But political giving is yucky.</Em24></P24>
-                <P24 className="text-medium">
-                  It’s better than another Trump presidency. There’s too much money in politics
-                  &mdash; but until campaign finance reform is fixed, money wins elections.
-                 </P24>      
-                 <P24 className="text-medium mt-4">
-                  If you want absolute certainty that your dollar reaches people in need,
-                  politics is not for you. But government money dwarfs any
-                  philanthropic contribution. So in exchange for uncertainty,
-                  you get big leverage.
-                </P24>
-              </div>
-
-              <!-- question -->
-              <div class="flex flex-col py-6">
-                <P24><Em24>Biden might die so I’m waiting to give.</Em24></P24>
-                <P24 className="text-medium">
-                  Campaign finance law allows the Biden campaign to transfer
-                  funds to another candidate so this isn’t a good excuse.
-                </P24>
-              </div>
- <!-- question -->
-              <div class="flex flex-col py-6">
-                <P24><Em24>Who built this?</Em24></P24>
-                <P24 className="text-medium">
-                  This site was built by <a
-                    href="https://www.linkedin.com/in/david-slifka-1ba4884/"
-                    class="underline hover:text-white transition-colors duration-200"
-                    target="_blank"
-                    >David Slifka</a
-                  >, <a
-                    href="https://www.linkedin.com/in/mrlerner/"
-                    class="underline hover:text-white transition-colors duration-200"
-                    target="_blank"
-                    >Matt Lerner</a
-                  >, <a
-                    href="https://davepeck.org/"
-                    class="underline hover:text-white transition-colors duration-200"
-                    target="_blank"
-                    >Dave Peck</a
-                  >, and <a
-                    href="https://www.linkedin.com/in/joon-s-86b1ab11/"
-                    class="underline hover:text-white transition-colors duration-200"
-                    target="_blank"
-                    >Joon Shin</a
-                  >. David is the author of Money and Innovation in politics, was a board member
-                  of the Democracy Alliance, and was formerly an investment manager at Yale University.
-                </P24>
-                <P24 className="text-medium mt-4">                  
-                  Matt, Dave, and Joon are techies from Seattle who want to protect our 
-                  democracy from Trump. 
-                </P24>
-              </div>
-              <!-- post question donate-now stuff -->
-            </div>
-
-            <!-- end of question section -->
-          </div>
-
-          <!-- post question 'let's win' section -->
-          <div
-            class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
-          >
-            <P28 className="text-white flex-grow">
-              Let’s win this November. If you wait, we lose.
-            </P28>
-            <div class="flex-shrink-0 mt-8 md:mt-0">
-              <DonateNowButton client:load />
-            </div>
-          </div>
         </div>
       </section>
-    </div>
-
-    <!-- footer -->
-    <div class="bg-darkest text-white">
-      <footer
-        class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
+      <!-- the calculator -->
+      <section
+        id="donateNow"
+        class="pt-16 pb-16 md:pt-32 md:pb-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
       >
-        <div class="flex flex-row">
-          <p class="flex-grow text-medium">©2024 vs. Trump Fund</p>
-          <a
-            href="#TODO"
-            class="underline text-white hover:text-medium transition-colors duration-200"
-            >Send Feedback</a
-          >
-        </div>
-      </footer>
+        <Calculator client:load />
+      </section>
+
+      <!-- question section -->
+      <div class="bg-dark text-white">
+        <section
+          class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
+        >
+          <div class="flex flex-col">
+            <div
+              class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
+            >
+              <H2>Questions</H2>
+
+              <!-- list of questions -->
+              <div class="flex flex-col -space-y-4 pt-4 md:pt-0">
+                <!-- question -->
+                <div class="flex flex-col py-6">
+                  <P24><Em24>How did you decide on this strategy?</Em24></P24>
+                  <P24 className="text-medium">
+                    We surveyed the top political donor advisors to pick the
+                    most impactful projects to defeat Trump.
+                  </P24>
+                  <P24 className="text-medium mt-4">
+                    Our goal is to provide the most effective giving strategy
+                    for people not working with a donor advisor.
+                  </P24>
+                </div>
+                <!-- question -->
+                <div class="flex flex-col py-6">
+                  <P24><Em24>How do I organize my friends to give?</Em24></P24>
+                  <P24 className="text-medium">
+                    Please start by forwarding this website to your friends and
+                    then
+                    <a
+                      href="#TODO"
+                      class="underline hover:text-white transition-colors duration-200"
+                      >contact us</a
+                    > for our organizing playbook.
+                    <P24 className="text-medium mt-4">
+                      If you can raise $250 each hour you reach out to your
+                      friends, it is the highest-impact volunteer opportunity to
+                      defeat Trump.
+                    </P24>
+                  </P24>
+                </div>
+
+                <!-- question -->
+                <div class="flex flex-col py-6">
+                  <P24><Em24>How much should I give?</Em24></P24>
+                  <P24 className="text-medium">
+                    It's personal &mdash; but how much is this election worth to
+                    you?
+                  </P24>
+                  <P24 className="text-medium mt-4">
+                    We've decided to 10X our impact this election by giving 5X
+                    as much as we gave in 2020, and giving 2X as effectively by
+                    giving in the first half of 2024.
+                  </P24>
+                  <P24 className="text-medium mt-4">
+                    <a
+                      href="#TODO"
+                      class="underline hover:text-white transition-colors duration-200"
+                      >Read the blog post</a
+                    > on why giving early 2X as effective.
+                  </P24>
+                </div>
+
+                <!-- question -->
+                <div class="flex flex-col py-6">
+                  <P24><Em24>But political giving is yucky.</Em24></P24>
+                  <P24 className="text-medium">
+                    It’s better than another Trump presidency. There’s too much
+                    money in politics &mdash; but until campaign finance reform
+                    is fixed, money wins elections.
+                  </P24>
+                  <P24 className="text-medium mt-4">
+                    If you want absolute certainty that your dollar reaches
+                    people in need, politics is not for you. But government
+                    money dwarfs any philanthropic contribution. So in exchange
+                    for uncertainty, you get big leverage.
+                  </P24>
+                </div>
+
+                <!-- question -->
+                <div class="flex flex-col py-6">
+                  <P24>
+                    <Em24>Biden might die so I’m waiting to give.</Em24>
+                  </P24>
+                  <P24 className="text-medium">
+                    Campaign finance law allows the Biden campaign to transfer
+                    funds to another candidate so this isn’t a good excuse.
+                  </P24>
+                </div>
+                <!-- question -->
+                <div class="flex flex-col py-6">
+                  <P24><Em24>Who built this?</Em24></P24>
+                  <P24 className="text-medium">
+                    This site was built by <a
+                      href="https://www.linkedin.com/in/david-slifka-1ba4884/"
+                      class="underline hover:text-white transition-colors duration-200"
+                      target="_blank">David Slifka</a
+                    >, <a
+                      href="https://www.linkedin.com/in/mrlerner/"
+                      class="underline hover:text-white transition-colors duration-200"
+                      target="_blank">Matt Lerner</a
+                    >, <a
+                      href="https://davepeck.org/"
+                      class="underline hover:text-white transition-colors duration-200"
+                      target="_blank">Dave Peck</a
+                    >, and <a
+                      href="https://www.linkedin.com/in/joon-s-86b1ab11/"
+                      class="underline hover:text-white transition-colors duration-200"
+                      target="_blank">Joon Shin</a
+                    >. David is the author of Money and Innovation in politics,
+                    was a board member of the Democracy Alliance, and was
+                    formerly an investment manager at Yale University.
+                  </P24>
+                  <P24 className="text-medium mt-4">
+                    Matt, Dave, and Joon are techies from Seattle who want to
+                    protect our democracy from Trump.
+                  </P24>
+                </div>
+                <!-- post question donate-now stuff -->
+              </div>
+
+              <!-- end of question section -->
+            </div>
+
+            <!-- post question 'let's win' section -->
+            <div
+              class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
+            >
+              <P28 className="text-white flex-grow">
+                Let’s win this November. If you wait, we lose.
+              </P28>
+              <div class="flex-shrink-0 mt-8 md:mt-0">
+                <DonateNowButton client:load />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- footer -->
+      <div class="bg-darkest text-white">
+        <footer
+          class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto"
+        >
+          <div class="flex flex-row">
+            <p class="flex-grow text-medium">©2024 vs. Trump Fund</p>
+            <a
+              href="#TODO"
+              class="underline text-white hover:text-medium transition-colors duration-200"
+              >Send Feedback</a
+            >
+          </div>
+        </footer>
+      </div>
     </div>
   </main>
 </Layout>
