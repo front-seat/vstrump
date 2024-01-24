@@ -132,8 +132,11 @@ const DISTRIBUTION: Distribution = [
     description: (
       <P21 className="text-medium">
         Good house candidates help turn out votes for Biden. 
-        Winning the house a good strategy in case Trump wins. We've chosen
-        the 10 most impactful house races according to {" "}
+        Winning the house a good strategy in case Trump wins. 
+      
+      </P21>
+      <P21 className="text-medium">
+        We've chosen the 10 most impactful house races according to {" "}
          <a 
           href="https://swingleft.org/"
           className="underline hover:text-white transition-colors duration-200"
