@@ -265,7 +265,7 @@ const DonationAmountBox = ({
   return (
     <div>
       <p className="font-switzer font-bold uppercase text-[15px] leading-[22.5px] text-white">
-        How much is this election worth to you?
+        Your donation amount
       </p>
       <div className="flex flex-row items-center max-w-[364px] border border-medium focus-within:border-sun transition-colors duration-200 bg-transparent text-white font-switzer font-normal text-[56px] leading-[56px]">
         <div className="text-white pl-4 flex-grow leading-10">$</div>
