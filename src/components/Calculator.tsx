@@ -275,7 +275,7 @@ const Calculator = () => {
       <H2 className="text-white">Make your donation</H2>
       <P28 className="text-white">
         Enter the amount you’d like to donate and we’ll
-        calculate how much to donate to where:
+        create donation links:
       </P28>
       <DonationAmountBox usd={usd} setUSD={setUSD} />
       <DistributionComponent distribution={DISTRIBUTION} usd={usd} />
