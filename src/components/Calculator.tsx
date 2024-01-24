@@ -52,7 +52,7 @@ const DISTRIBUTION: Distribution = [
         >
             Movement Voter Project
           </a>
-           and {" "}
+           {" "} and {" "}
          <a 
           href="https://www.workingamerica.org/"
           className="underline hover:text-white transition-colors duration-200"
