@@ -44,15 +44,15 @@ const DISTRIBUTION: Distribution = [
           tax-deductible donations.
         </P21>
         <P21 className="text-medium">
-          We’ve chosen{" "}
+          We’ve chosen the {" "}
           <a 
           href="https://movement.vote/"
           className="underline hover:text-white transition-colors duration-200"
           target="_blank"
         >
-            the Movement Voter Project
+            Movement Voter Project
           </a>
-          , and {" "}
+           and {" "}
          <a 
           href="https://www.workingamerica.org/"
           className="underline hover:text-white transition-colors duration-200"
@@ -73,8 +73,8 @@ const DISTRIBUTION: Distribution = [
       <>
         <P21 className="text-medium">
           These organizations build long-term relationships with specific
-          communities and demographics. These organizations focus on being
-          trusted messengers in critical battleground states.
+          communities and demographics. They are trusted messengers in 
+          critical battleground states.
         </P21>
         <P21 className="text-medium">
           We’ve chosen{" "}
@@ -93,7 +93,7 @@ const DISTRIBUTION: Distribution = [
         >
             Black Leaders Organizing Communities
           </a>
-           ,{" "}
+           , the {" "}
            <a 
           href="https://newgeorgiaproject.org/"
           className="underline hover:text-white transition-colors duration-200"
@@ -107,7 +107,7 @@ const DISTRIBUTION: Distribution = [
           className="underline hover:text-white transition-colors duration-200"
           target="_blank"
         >
-            Living United for Change in Arizona (LUCHA)
+            LUCHA Arizona
           </a>
           .
         </P21>
