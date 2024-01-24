@@ -45,17 +45,18 @@ const DISTRIBUTION: Distribution = [
         </P21>
         <P21 className="text-medium">
           We’ve chosen{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
-            Everybody Votes
+          <a 
+          href="https://movement.vote/"
+          className="underline hover:text-white transition-colors duration-200"
+          target="_blank"
+        >
+            the Movement Voter Project
           </a>
           , and {" "}
          <a 
-        href="https://www.workingamerica.org/"
-        className="underline hover:text-white transition-colors duration-200"
-        target="_blank"
+          href="https://www.workingamerica.org/"
+          className="underline hover:text-white transition-colors duration-200"
+          target="_blank"
         >
             Working America
           </a>{" "}
@@ -73,36 +74,40 @@ const DISTRIBUTION: Distribution = [
         <P21 className="text-medium">
           These organizations build long-term relationships with specific
           communities and demographics. These organizations focus on being
-          trusted messengers for getting out the vote.
+          trusted messengers in critical battleground states.
         </P21>
         <P21 className="text-medium">
           We’ve chosen{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
-            The Movement Voter Project
-          </a>
-          ,{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
+          <a 
+          href="https://www.somosvotantes.com/"
+          className="underline hover:text-white transition-colors duration-200"
+          target="_blank"
+        >
             Somos Votantes
           </a>
           ,{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
+          <a 
+          href="https://www.blocbybloc.org/"
+          className="underline hover:text-white transition-colors duration-200"
+          target="_blank"
+        >
             Black Leaders Organizing Communities
           </a>
-          , and the{" "}
-          <a
-            onClick={() => alert("TODO: link")}
-            className="underline hover:text-white transition-colors duration-200"
-          >
-            New George Project
+           ,{" "}
+           <a 
+          href="https://newgeorgiaproject.org/"
+          className="underline hover:text-white transition-colors duration-200"
+          target="_blank"
+        >
+            New Georgia Project
+          </a>
+          , and {" "}
+           <a 
+          href="https://www.luchaaz.org/"
+          className="underline hover:text-white transition-colors duration-200"
+          target="_blank"
+        >
+            Living United for Change in Arizona (LUCHA)
           </a>
           .
         </P21>
@@ -127,8 +132,8 @@ const DISTRIBUTION: Distribution = [
     name: "Competitive House Races",
     description: (
       <P21 className="text-medium">
-        Winning the house is an important backup in case Trump wins, but a good
-        local candidate can also help turn out votes for Biden.
+        Good house candidates help turn out votes for Biden. 
+        Winning the house is also a good strategy in case Trump wins.
       </P21>
     ),
     perc: 0.2,
