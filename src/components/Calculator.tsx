@@ -60,7 +60,7 @@ const DISTRIBUTION: Distribution = [
         >
             Working America
           </a>{" "}
-          because of their low cost per voter.
+          because of their low cost per vote.
         </P21>
       </>
     ),
