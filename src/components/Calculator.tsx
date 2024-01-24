@@ -265,7 +265,7 @@ const DonationAmountBox = ({
   return (
     <div>
       <p className="font-switzer font-bold uppercase text-[15px] leading-[22.5px] text-white">
-        My donation amount
+        How much is this election worth to you?
       </p>
       <div className="flex flex-row items-center max-w-[364px] border border-medium focus-within:border-sun transition-colors duration-200 bg-transparent text-white font-switzer font-normal text-[56px] leading-[56px]">
         <div className="text-white pl-4 flex-grow leading-10">$</div>
@@ -291,7 +291,7 @@ const Calculator = () => {
     <div className="flex flex-col space-y-6">
       <H2 className="text-white">Make your donation</H2>
       <P28 className="text-white">
-        Edit the amount you’d like to donate in the box below and we’ll
+        Enter the amount you’d like to donate and we’ll
         calculate how much to donate to where:
       </P28>
       <DonationAmountBox usd={usd} setUSD={setUSD} />
