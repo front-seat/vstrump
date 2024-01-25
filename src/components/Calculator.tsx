@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import type { ReactNode } from "react";
+import type { ReactNode, MouseEvent } from "react";
 import Button from "./Button";
 
 import { P21, P28, Em28, H2 } from "./Typeography";
@@ -168,23 +168,27 @@ const AllocationComponent = ({
   usd: number;
   index: number;
 }) => {
-  const handleDonateClick = useCallback(() => {
-    // @ts-ignore-next-line (see Layout.astro)
-    if (window.ga_loaded) {
+  const handleDonateClick = useCallback(
+    (e: MouseEvent) => {
+      e.preventDefault();
+
       window.gtag("event", "click_donate", {
         event_category: "donation",
         event_label: "Clicked a donation link",
         allocation: allocation.name,
         usd: usd,
         url: allocation.url(usd),
-        event_callback: () => {
-          window.open(allocation.url(usd), "_blank");
-        },
       });
-    } else {
+
+      // ideally we'd wait a moment for the gtag event to fire, or even
+      // use the `event_callback` parameter to wait for it to fire, but
+      // given the constraints of making it work no matter the condition
+      // of the gtag scripts, let's just do this instead for now?
+
       window.open(allocation.url(usd), "_blank");
-    }
-  }, [allocation, usd]);
+    },
+    [allocation, usd]
+  );
 
   return (
     <div className="flex flex-row md:space-x-8 items-start flex-wrap md:flex-nowrap">
@@ -202,11 +206,14 @@ const AllocationComponent = ({
         </div>
       </div>
       <div className="min-w-[21%] pt-6 md:pt-0">
-        <Button
-          title={`Donate ${formatUSD(usd, false, true)}`}
+        <a
+          href={allocation.url(usd)}
+          target="_blank"
           onClick={handleDonateClick}
-          className="w-full text-[20px] leading-[28px] py-4"
-        />
+          className="block text-center cursor-pointer font-plein font-medium border border-sun uppercase bg-transparent px-4 text-sun hover:text-inherit hover:bg-sun transition-colors duration-200 w-full text-[20px] leading-[28px] py-4"
+        >
+          Donate {formatUSD(usd, false, true)}
+        </a>
       </div>
     </div>
   );
