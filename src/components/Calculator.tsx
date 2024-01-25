@@ -5,7 +5,7 @@ import Button from "./Button";
 import { P21, P28, Em28, H2 } from "./Typeography";
 
 /** Format dollars as dollars, with commas. */
-const formatUSD = (
+export const formatUSD = (
   usd: number,
   showCents: boolean = true,
   showDollarSign: boolean = true
@@ -14,12 +14,13 @@ const formatUSD = (
     style: "currency",
     currency: "USD",
     minimumFractionDigits: showCents ? 2 : 0,
+    maximumFractionDigits: showCents ? 2 : 0,
   });
   return showDollarSign ? formatted : formatted.slice(1);
 };
 
 /** Format a percentage (from 0.0 to 1.0) in human-readable form. */
-const formatPerc = (perc: number) => `${Math.round(perc * 100)}%`;
+export const formatPerc = (perc: number) => `${Math.round(perc * 100)}%`;
 
 /** A partial allocation of a total election-cycle donation. */
 interface Allocation {
@@ -212,33 +213,38 @@ const AllocationComponent = ({
 };
 
 /** Compute a dollar-rounded amount for each allocation in a distribtion. */
-const computeRoundedDistribution = (
-  distribution: Distribution,
+export const computeEvenDollarAmounts = (
+  percs: number[],
   usd: number
-): [Allocation, number][] => {
+): number[] => {
   // Compute the *total* number of USD we want to distribute over
   // our allocations.
   const totalUSD = Math.floor(usd);
 
-  // Assert that our allocations are in reverse percentage order
-  // (greatest to least).
+  // Assert that our percentages are ordered from greatest to least.
+  // Also assert that they sum to 1.
   let lastPerc = 1;
-  for (const allocation of distribution) {
-    if (allocation.perc > lastPerc) {
+  let sum = 0;
+  for (const perc of percs) {
+    if (perc > lastPerc) {
       throw new Error(
         "Allocation percentages must be in reverse order (greatest to least)"
       );
     }
-    lastPerc = allocation.perc;
+    lastPerc = perc;
+    sum += perc;
+  }
+  if (sum !== 1) {
+    throw new Error("Allocation percentages must sum to 1");
   }
 
   // Distribute the USD over our allocations, rounding each allocation
   // to the nearest dollar.
-  const roundedDistribution: [Allocation, number][] = [];
+  const evenDollarAmounts: number[] = [];
   let remainingUSD = totalUSD;
-  for (const allocation of distribution) {
-    const roundedUSD = Math.round(allocation.perc * totalUSD);
-    roundedDistribution.push([allocation, roundedUSD]);
+  for (const perc of percs) {
+    const roundedUSD = Math.round(perc * totalUSD);
+    evenDollarAmounts.push(roundedUSD);
     remainingUSD -= roundedUSD;
   }
 
@@ -248,17 +254,17 @@ const computeRoundedDistribution = (
   // up/down by one dollar, then the smaller allocations, etc.
   let i = 0;
   while (remainingUSD !== 0) {
-    const [allocation, roundedUSD] = roundedDistribution[i];
+    const roundedUSD = evenDollarAmounts[i];
     const delta = remainingUSD > 0 ? 1 : -1;
-    roundedDistribution[i] = [allocation, roundedUSD + delta];
+    evenDollarAmounts[i] = roundedUSD + delta;
     remainingUSD -= delta;
     i++;
   }
 
   // Assert that we've distributed the correct amount of USD by explicitly
   // summing the rounded amounts.
-  const actualUSD = roundedDistribution.reduce(
-    (sum, [_, roundedUSD]) => sum + roundedUSD,
+  const actualUSD = evenDollarAmounts.reduce(
+    (sum, roundedUSD) => sum + roundedUSD,
     0
   );
   if (actualUSD !== totalUSD) {
@@ -267,8 +273,8 @@ const computeRoundedDistribution = (
     );
   }
 
-  // Return the rounded distribution.
-  return roundedDistribution;
+  // Return the final dollar amounts.
+  return evenDollarAmounts;
 };
 
 /** React component that displays a full Distribution. */
@@ -279,16 +285,19 @@ const DistributionComponent = ({
   distribution: Distribution;
   usd: number;
 }) => {
-  const roundedDistribution = computeRoundedDistribution(distribution, usd);
+  const dollarAmounts = computeEvenDollarAmounts(
+    distribution.map((allocation) => allocation.perc),
+    usd
+  );
 
   return (
     <div className="flex flex-col py-8 space-y-8">
-      {roundedDistribution.map(([allocation, usd], i) => (
+      {distribution.map((allocation, i) => (
         <AllocationComponent
           key={allocation.name}
           index={i + 1}
           allocation={allocation}
-          usd={usd}
+          usd={dollarAmounts[i]}
         />
       ))}
     </div>
