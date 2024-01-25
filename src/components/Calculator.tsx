@@ -202,13 +202,73 @@ const AllocationComponent = ({
       </div>
       <div className="min-w-[21%] pt-6 md:pt-0">
         <Button
-          title={`Donate ${formatUSD(usd, true, true)}`}
+          title={`Donate ${formatUSD(usd, false, true)}`}
           onClick={handleDonateClick}
           className="w-full text-[20px] leading-[28px] py-4"
         />
       </div>
     </div>
   );
+};
+
+/** Compute a dollar-rounded amount for each allocation in a distribtion. */
+const computeRoundedDistribution = (
+  distribution: Distribution,
+  usd: number
+): [Allocation, number][] => {
+  // Compute the *total* number of USD we want to distribute over
+  // our allocations.
+  const totalUSD = Math.floor(usd);
+
+  // Assert that our allocations are in reverse percentage order
+  // (greatest to least).
+  let lastPerc = 1;
+  for (const allocation of distribution) {
+    if (allocation.perc > lastPerc) {
+      throw new Error(
+        "Allocation percentages must be in reverse order (greatest to least)"
+      );
+    }
+    lastPerc = allocation.perc;
+  }
+
+  // Distribute the USD over our allocations, rounding each allocation
+  // to the nearest dollar.
+  const roundedDistribution: [Allocation, number][] = [];
+  let remainingUSD = totalUSD;
+  for (const allocation of distribution) {
+    const roundedUSD = Math.round(allocation.perc * totalUSD);
+    roundedDistribution.push([allocation, roundedUSD]);
+    remainingUSD -= roundedUSD;
+  }
+
+  // Now, check to make sure the total dollar amount we've distributed
+  // matches the total USD we wanted to distribute. If it's off, we need
+  // to adjust the allocations. Start by adjusting the larger allocations
+  // up/down by one dollar, then the smaller allocations, etc.
+  let i = 0;
+  while (remainingUSD !== 0) {
+    const [allocation, roundedUSD] = roundedDistribution[i];
+    const delta = remainingUSD > 0 ? 1 : -1;
+    roundedDistribution[i] = [allocation, roundedUSD + delta];
+    remainingUSD -= delta;
+    i++;
+  }
+
+  // Assert that we've distributed the correct amount of USD by explicitly
+  // summing the rounded amounts.
+  const actualUSD = roundedDistribution.reduce(
+    (sum, [_, roundedUSD]) => sum + roundedUSD,
+    0
+  );
+  if (actualUSD !== totalUSD) {
+    throw new Error(
+      `Expected to distribute ${totalUSD} USD, but actually distributed ${actualUSD} USD`
+    );
+  }
+
+  // Return the rounded distribution.
+  return roundedDistribution;
 };
 
 /** React component that displays a full Distribution. */
@@ -219,14 +279,16 @@ const DistributionComponent = ({
   distribution: Distribution;
   usd: number;
 }) => {
+  const roundedDistribution = computeRoundedDistribution(distribution, usd);
+
   return (
     <div className="flex flex-col py-8 space-y-8">
-      {distribution.map((allocation, i) => (
+      {roundedDistribution.map(([allocation, usd], i) => (
         <AllocationComponent
           key={allocation.name}
           index={i + 1}
           allocation={allocation}
-          usd={usd * allocation.perc}
+          usd={usd}
         />
       ))}
     </div>
@@ -241,11 +303,24 @@ const DonationAmountBox = ({
   usd: number;
   setUSD: (usd: number) => void;
 }) => {
-  const [text, setText] = useState<string>(formatUSD(usd, true, false));
+  const [text, setText] = useState<string>(formatUSD(usd, false, false));
 
   useEffect(() => {
+    // Copy the text for us to process
+    let decimalPlaces = 0;
+
     // is there a decimal point?
     const hasDecimal = text.indexOf(".") !== -1;
+
+    // if there *is* a decimal point, make sure there are exactly two digits after it
+    if (hasDecimal) {
+      const parts = text.split(".");
+      if (parts.length !== 2) {
+        return;
+      }
+
+      decimalPlaces = parts[1].length;
+    }
 
     // remove all non-numeric characters
     const cleaned = text.replace(/[^0-9]/g, "");
@@ -264,7 +339,7 @@ const DonationAmountBox = ({
     }
 
     // convert to USD (using hasDecimal)
-    const cents = hasDecimal ? parsed : parsed * 100;
+    const cents = (parsed / Math.pow(10, decimalPlaces)) * 100;
     const newUSD = cents / 100;
     setUSD(newUSD);
   }, [text]);
