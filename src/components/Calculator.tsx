@@ -170,7 +170,7 @@ const AllocationComponent = ({
   const handleDonateClick = useCallback(() => {
     // @ts-ignore-next-line (see Layout.astro)
     if (window.ga_loaded) {
-      gtag("event", "click_donate", {
+      window.gtag("event", "click_donate", {
         event_category: "donation",
         event_label: "Clicked a donation link",
         allocation: allocation.name,
