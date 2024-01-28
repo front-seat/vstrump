@@ -1,6 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
 import type { ReactNode, MouseEvent } from "react";
-import Button from "./Button";
 
 import { P21, P28, Em28, H2 } from "./Typeography";
 
