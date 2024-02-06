@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 /** The primary headline font and metrics. */
 export const PLEIN_HEADLINE =
-  "font-plein font-normal text-[90px] leading-[86.4px] md:text-[190px] md:leading-[171px]";
+  "font-plein font-bold text-[90px] leading-[81px] md:text-[150px] md:leading-[135px]";
 
 export type TypographicComponent = React.FC<
   React.PropsWithChildren<{ className?: string }>

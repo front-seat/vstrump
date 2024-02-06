@@ -124,6 +124,17 @@ const { title } = Astro.props;
   @font-face {
     font-family: "Plein";
     src:
+      url("/fonts/Plein-BoldItalic.woff2") format("woff2"),
+      url("/fonts/Plein-BoldItalic.woff") format("woff"),
+      url("/fonts/Plein-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Plein";
+    src:
       url("/fonts/Plein-Regular.woff2") format("woff2"),
       url("/fonts/Plein-Regular.woff") format("woff"),
       url("/fonts/Plein-Regular.ttf") format("truetype");
