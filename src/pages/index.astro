@@ -4,12 +4,10 @@ import { ButtonLink } from "../components/ButtonLink.tsx";
 import {
   H1,
   H2,
-  H3,
   Em21,
   Em24,
-  Em28,
+  P17,
   P21,
-  P24,
   P28,
   PMedium,
 } from "../components/Typeography.tsx";
@@ -146,34 +144,113 @@ const BLOG_POST_URL =
 
           <!-- 'how it works' table -->
           <div class="flex flex-col">
+            <!-- table entry -->
             <div
-              class="flex flex-row flex-nowrap border-t border-b py-6 border-darkest items-center space-x-8"
+              class="flex flex-row flex-nowrap border-t border-b py-6 border-darkest items-start space-x-8"
             >
-              <P21 className="flex-grow">
-                Voter registration, persuasion, and turnout
-              </P21>
+              <div class="flex-grow flex flex-col">
+                <P21>
+                  Organize and mobilize specific communities and demographics
+                </P21>
+                <P17 className="mt-4 text-dark">
+                  These organizations find, persuade, and mobilize individuals
+                  in key constituencies such as middle-class workers (<a
+                    href="https://www.workingamerica.org"
+                    target="_blank"
+                    class="cursor-pointer underline">Working America</a
+                  >), moderate women (<a
+                    href="https://www.galvanizeusa.org"
+                    target="_blank"
+                    class="cursor-pointer underline">Galvanize</a
+                  >), suburban voters (<a
+                    href="https://forwardmajority.org"
+                    target="_blank"
+                    class="cursor-pointer underline">Forward Majority</a
+                  >), and others (<a
+                    href="https://movement.vote"
+                    target="_blank"
+                    class="cursor-pointer underline">Movement Voter PAC</a
+                  >).
+                </P17>
+              </div>
               <PMedium className="flex-shrink-0">40%</PMedium>
             </div>
+
+            <!-- table entry -->
             <div
-              class="flex flex-row flex-nowrap border-b py-6 border-darkest items-center space-x-8"
+              class="flex flex-row flex-nowrap border-b py-6 border-darkest items-start space-x-8"
             >
-              <P21 className="flex-grow">
-                Organizations that focus on specific communities and
-                demographics
-              </P21>
+              <div class="flex-grow flex flex-col">
+                <P21>Support Biden campaign &amp; competitive House races</P21>
+                <P17 className="mt-4 text-dark">
+                  Campaigns are impactful because they can buy ads at discounted
+                  rates and because they can legally coordinate with the party
+                  and each other. For the House, <a
+                    href="https://swingleft.org"
+                    target="_blank"
+                    class="cursor-pointer underline">Swing Left</a
+                  > will allocate this fund across competitive races.
+                </P17>
+              </div>
               <PMedium className="flex-shrink-0">20%</PMedium>
             </div>
+
+            <!-- table entry -->
             <div
-              class="flex flex-row flex-nowrap border-b py-6 border-darkest items-center space-x-8"
+              class="flex flex-row flex-nowrap border-b py-6 border-darkest items-start space-x-8"
             >
-              <P21 className="flex-grow">Biden Campaign</P21>
+              <div class="flex-grow flex flex-col">
+                <P21>Improve data and other infrastructure</P21>
+                <P17 className="mt-4 text-dark">
+                  <a
+                    href="https://americavotes.org"
+                    target="_blank"
+                    class="cursor-pointer underline">America Votes</a
+                  > and the <a
+                    href="https://democrats.org"
+                    target="_blank"
+                    class="cursor-pointer underline">DNC</a
+                  > maintain critical data warehouses and other infrastructure for
+                  the ecosystem’s two sides: campaigns and “independent expenditure”
+                  organizations
+                </P17>
+              </div>
               <PMedium className="flex-shrink-0">20%</PMedium>
             </div>
+
+            <!-- table entry -->
             <div
-              class="flex flex-row flex-nowrap py-6 border-darkest items-center space-x-8"
+              class="flex flex-row flex-nowrap py-6 border-darkest items-start space-x-8"
             >
-              <P21 className="flex-grow">Other competitive house races</P21>
+              <div class="flex-grow flex flex-col">
+                <P21>Execute and spread new evidence-based best practices</P21>
+                <P17 className="mt-4 text-dark">
+                  <a
+                    href="https://www.voterev.org"
+                    target="_blank"
+                    class="cursor-pointer underline">Vote Rev</a
+                  > and <a
+                    href="https://movementlabs.com"
+                    target="_blank"
+                    class="cursor-pointer underline">Movement Labs</a
+                  > find and mobilize individuals who agree with us but aren’t regular
+                  voters.
+                </P17>
+              </div>
               <PMedium className="flex-shrink-0">20%</PMedium>
+            </div>
+
+            <!-- table entry -->
+            <div
+              class="flex flex-row flex-nowrap py-6 border-darkest items-start space-x-8"
+            >
+              <ButtonLink
+                title="Donate Now"
+                href={ACTBLUE_URL}
+                invert
+                className="!w-full !py-5 text-center"
+                client:load
+              />
             </div>
           </div>
         </div>

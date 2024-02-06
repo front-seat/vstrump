@@ -105,6 +105,13 @@ export const Em21: TypographicComponent = ({ children, className }) => (
   <em className={clsx(SWITZER_BOLD_21, "not-italic", className)}>{children}</em>
 );
 
+export const SWITZER_REGULAR_17 =
+  "font-switzer font-normal text-[17px] leading-[25.5px]";
+
+export const P17: TypographicComponent = ({ children, className }) => (
+  <p className={clsx(SWITZER_REGULAR_17, className)}>{children}</p>
+);
+
 // Another callout font
 
 /** Desktop font metrics. */
