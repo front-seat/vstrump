@@ -296,20 +296,25 @@ import {
 
               <!-- end of question section -->
             </div>
-
-            <!-- post question 'let's win' section -->
-            <div
-              class="flex flex-row flex-wrap md:flex-nowrap md:space-x-16 lg:space-x-28 py-6"
-            >
-              <P28 className="text-white flex-grow">
-                Let’s win this November. If you wait, we lose.
-              </P28>
-              <div class="flex-shrink-0 mt-8 md:mt-0">
-                <DonateNowButton client:load />
-              </div>
-            </div>
           </div>
         </section>
+      </div>
+
+      <!-- post question 'let's win' section -->
+      <div class="w-full bg-sun">
+        <div
+          class="py-16 md:py-32 max-w-[768px] lg:max-w-[960px] mx-4 md:mx-auto flex flex-col md:flex-row items-center md:flex-nowrap md:space-x-16 lg:space-x-28"
+        >
+          <div
+            class="font-plein font-bold text-[40px] leading-[52px] text-darkest flex-grow"
+          >
+            Let’s win this November.<br class="hidden md:block" />{" "}If you
+            wait, we lose.
+          </div>
+          <div class="w-full md:w-auto flex-shrink-0 mt-8 md:mt-0">
+            <DonateNowButton invert className="!w-full !py-5" client:load />
+          </div>
+        </div>
       </div>
 
       <!-- footer -->
