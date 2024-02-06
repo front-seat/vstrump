@@ -2,14 +2,18 @@ import clsx from "clsx";
 
 interface Props {
   title: string;
+  invert?: boolean;
   className?: string;
   onClick: () => void;
 }
 
-const Button: React.FC<Props> = ({ title, className, onClick }) => (
+const Button: React.FC<Props> = ({ title, invert, className, onClick }) => (
   <button
     className={clsx(
-      "cursor-pointer font-plein font-medium text-[18px] leading-[25.2px] border border-sun uppercase bg-transparent px-4 py-2 text-sun hover:text-inherit hover:bg-sun transition-colors duration-200",
+      "cursor-pointer font-switzer font-semibold text-[20px] leading-[20px] border-2 px-[19px] py-[14px] transition-colors duration-200",
+      invert
+        ? "border-darkest bg-sun text-darkest hover:text-white hover:border-white"
+        : "border-sun bg-transparent text-sun hover:text-inherit hover:bg-sun",
       className
     )}
     onClick={onClick}
@@ -18,9 +22,14 @@ const Button: React.FC<Props> = ({ title, className, onClick }) => (
   </button>
 );
 
-export const DonateNowButton: React.FC = () => (
+export const DonateNowButton: React.FC<{
+  invert?: boolean;
+  className?: string;
+}> = ({ invert, className }) => (
   <Button
     title="Donate Now"
+    invert={invert}
+    className={className}
     onClick={() => {
       // document.getElementById("donation-amount")?.scrollIntoView();
       const donationAmountInput = document.getElementById(

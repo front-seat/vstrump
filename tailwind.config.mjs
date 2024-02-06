@@ -9,6 +9,7 @@ export default {
         "less-dark": "#393A3E",
         medium: "#6E6E6E",
         sun: "#FFE24C",
+        border: ""
         // white: "#FFFFFF",
       },
       fontFamily: {

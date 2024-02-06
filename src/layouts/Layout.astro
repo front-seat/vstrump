@@ -69,6 +69,17 @@ const { title } = Astro.props;
   @font-face {
     font-family: "Switzer";
     src:
+      url("/fonts/Switzer-Semibold.woff2") format("woff2"),
+      url("/fonts/Switzer-Semibold.woff") format("woff"),
+      url("/fonts/Switzer-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Switzer";
+    src:
       url("/fonts/Switzer-Bold.woff2") format("woff2"),
       url("/fonts/Switzer-Bold.woff") format("woff"),
       url("/fonts/Switzer-Bold.ttf") format("truetype");
