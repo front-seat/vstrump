@@ -387,9 +387,7 @@ const Calculator = () => {
   return (
     <div className="flex flex-col space-y-6">
       <H2 className="text-white">Make your donation</H2>
-      <P28 className="text-white">
-        Enter the amount you’d like to donate:
-      </P28>
+      <P28 className="text-white">Enter the amount you’d like to donate:</P28>
       <DonationAmountBox usd={usd} setUSD={setUSD} />
       <DistributionComponent distribution={DISTRIBUTION} usd={usd} />
     </div>
